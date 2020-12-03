@@ -1,8 +1,8 @@
 name: lightbox
-description: A new Flutter package.
+description: Flutter plugin to create lightbox like in web apps.
 version: 0.0.1
-author:
-homepage:
+author: SherlockHolmes2045<lemovou@gmail.com>
+homepage: https://github.com/SherlockHolmes2045/flutter_lightbox
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
