@@ -3,6 +3,7 @@ library lightbox;
 import 'package:flutter/material.dart';
 
 class LightBoxRoute extends PopupRoute {
+
   LightBoxRoute({
     @required this.builder,
     this.dismissible = true,

@@ -1,6 +1,7 @@
 library lightbox;
 
 import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class LightBox extends StatefulWidget {
@@ -21,16 +22,12 @@ class LightBox extends StatefulWidget {
 
 class _LightBoxState extends State<LightBox> {
 
-  PageController controller ;
-  var currentPageValue = 0.0;
-  var mItemCount = 10;
-
+  PageController controller;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
     controller = PageController(viewportFraction: 1, keepPage: true, initialPage: widget.initialIndex);
   }
 
@@ -39,6 +36,22 @@ class _LightBoxState extends State<LightBox> {
       if(whichPage < widget.images.length && whichPage >= 0){
         controller.jumpToPage(whichPage);
       }
+    }
+  }
+
+  Widget widgetToUse(bool url,String path){
+    if(url == true){
+      return CachedNetworkImage(
+        imageUrl: path,
+        placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+        fit: BoxFit.cover,
+      );
+    }else{
+      return Image.asset(
+        path,
+        fit: BoxFit.cover,
+      );
     }
   }
 
@@ -99,10 +112,7 @@ class _LightBoxState extends State<LightBox> {
                         physics: NeverScrollableScrollPhysics(),
                         itemCount: widget.images.length,
                         itemBuilder: (context,position){
-                          return   Image.asset(
-                            widget.images[position],
-                            fit: BoxFit.cover,
-                          );
+                          return  widgetToUse(widget.url, widget.images[position]);
                         }
                     )
                 ),
