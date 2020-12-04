@@ -56,58 +56,90 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 200,
-            child: ListView.separated(
-              separatorBuilder: (context,index) => SizedBox(width: 10.0),
-                scrollDirection: Axis.horizontal,
-                itemCount: imagesAsset.length,
-                itemBuilder: (context,position){
-              return GestureDetector(
-                child: Container(
-                  height: 200,
-                  width: 200,
-                  child: /*Image.network(
-                    images[position],
-                    fit: BoxFit.cover,
-                  ),*/
-                  Image.asset(
-                    imagesAsset[position],
-                    fit: BoxFit.cover,
-                  )
+          child: Column(
+            children: [
+              Text(
+                "Using assets images",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0
                 ),
-                onTap: (){
-                  //use images from internet
-                  /*Navigator.push(
-                      context,
-                      LightBoxRoute(
-                          builder: (BuildContext context){
-                            return LightBox(
-                              images,
-                              initialIndex: position,
-                              url: true,
-                            );
-                          },
-                          dismissible: false
-                      ));*/
-
-                  //or use images from your assets
-
-                  Navigator.push(
-                      context,
-                      LightBoxRoute(
-                          builder: (BuildContext context){
-                            return LightBox(
-                              imagesAsset,
-                              initialIndex: position,
-                            );
-                          },
-                          dismissible: false
-                      ));
-                },
-              );
-            }),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                child: ListView.separated(
+                  separatorBuilder: (context,index) => SizedBox(width: 10.0),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: imagesAsset.length,
+                    itemBuilder: (context,position){
+                  return GestureDetector(
+                    child: Container(
+                      height: 200,
+                      width: 200,
+                      child:
+                      Image.asset(
+                        imagesAsset[position],
+                        fit: BoxFit.cover,
+                      )
+                    ),
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          LightBoxRoute(
+                              builder: (BuildContext context){
+                                return LightBox(
+                                  imagesAsset,
+                                  initialIndex: position,
+                                );
+                              },
+                              dismissible: false
+                          ));
+                    },
+                  );
+                }),
+              ),
+              Text(
+                "Using images from the internet",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                child: ListView.separated(
+                    separatorBuilder: (context,index) => SizedBox(width: 10.0),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: imagesAsset.length,
+                    itemBuilder: (context,position){
+                      return GestureDetector(
+                        child: Container(
+                            height: 200,
+                            width: 200,
+                            child: Image.network(
+                            images[position],
+                          fit: BoxFit.cover,
+                      ),),
+                        onTap: (){
+                          Navigator.push(
+                          context,
+                          LightBoxRoute(
+                              builder: (BuildContext context){
+                                return LightBox(
+                                  images,
+                                  initialIndex: position,
+                                  isUrl: true,
+                                );
+                              },
+                              dismissible: false
+                          ));
+                        },
+                      );
+                    }),
+              ),
+            ],
           ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

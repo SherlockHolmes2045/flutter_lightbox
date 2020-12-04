@@ -5,16 +5,62 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class LightBox extends StatefulWidget {
-
+  /// Implementation of web Lightbox in flutter
   final List<String> images;
   final int initialIndex;
-  final bool url;
+  final bool isUrl;
+  final double blur;
+  final IconData closeIcon;
+  final Color closeIconColor;
+  final String closeText;
+  final Color closeTextColor;
+  final IconData prevIcon;
+  final Color prevIconColor;
+  final String prevText;
+  final Color prevTextColor;
+  final IconData nextIcon;
+  final Color nextIconColor;
+  final String nextText;
+  final Color nextTextColor;
 
   LightBox(
+      ///Array of images that will be display by the lightbox
+      ///
+      /// It may be paths to images in asset or urls for images to be fetch on the Internet
       this.images,
       {
+        /// Gives the initial index of the Lightbox
+        /// By default it has the value zero
         this.initialIndex = 0,
-        this.url = false
+        /// This parameter indicates wheter the images paramters are urls or not
+        /// By default it has value false
+        this.isUrl = false,
+        /// Gives the value of the Gaussian blur
+        this.blur = 2.5,
+        ///Icon to close the lightbox
+        this.closeIcon = Icons.close,
+        ///Close icon color
+        this.closeIconColor = Colors.black,
+        ///Close text to be display
+        this.closeText = 'Close',
+        ///Close text color
+        this.closeTextColor = Colors.black,
+        /// Previous Icon
+        this.prevIcon = Icons.arrow_back_ios,
+        /// Previous Icon color
+        this.prevIconColor = Colors.black,
+        /// Previous button text
+        this.prevText = 'Prev',
+        ///Previous button text color
+        this.prevTextColor = Colors.black,
+        /// Next Icon
+        this.nextIcon = Icons.arrow_forward_ios,
+        /// Next Icon color
+        this.nextIconColor = Colors.black,
+        /// Next button text
+        this.nextText = 'Next',
+        ///Next button text color
+        this.nextTextColor = Colors.black
       });
   @override
   _LightBoxState createState() => _LightBoxState();
@@ -64,8 +110,8 @@ class _LightBoxState extends State<LightBox> {
         children: [
           BackdropFilter(
             filter: ImageFilter.blur(
-              sigmaX: 2.5,
-              sigmaY: 2.5,
+              sigmaX: widget.blur,
+              sigmaY: widget.blur,
             ),
             child: Column(
               children: [
@@ -81,8 +127,8 @@ class _LightBoxState extends State<LightBox> {
                             right: (MediaQuery.of(context).size.width / 100),
                             bottom: (MediaQuery.of(context).size.height / 100)),
                         child: Icon(
-                          Icons.close,
-                          color: Colors.black,
+                          widget.closeIcon,
+                          color: widget.closeIconColor,
                         ),
                       ),
                       Padding(
@@ -91,9 +137,9 @@ class _LightBoxState extends State<LightBox> {
                             (MediaQuery.of(context).size.width / 100) * 16,
                             bottom: (MediaQuery.of(context).size.height / 100)),
                         child: Text(
-                          "Close",
+                          widget.closeText,
                           style: TextStyle(
-                              color: Colors.black,
+                              color: widget.closeTextColor,
                               fontSize: 20.0,
                               decoration: TextDecoration.none),
                         ),
@@ -112,7 +158,7 @@ class _LightBoxState extends State<LightBox> {
                         physics: NeverScrollableScrollPhysics(),
                         itemCount: widget.images.length,
                         itemBuilder: (context,position){
-                          return  widgetToUse(widget.url, widget.images[position]);
+                          return  widgetToUse(widget.isUrl, widget.images[position]);
                         }
                     )
                 ),
@@ -124,15 +170,16 @@ class _LightBoxState extends State<LightBox> {
                           Padding(
                             padding: EdgeInsets.only(left: (MediaQuery.of(context).size.width / 100) * 14, top: (MediaQuery.of(context).size.height / 100) * 1.5),
                             child: Icon(
-                                Icons.arrow_back_ios
+                                widget.prevIcon,
+                              color: widget.prevIconColor,
                             ),
                           ),
                           Padding(
                             padding: EdgeInsets.only( top: (MediaQuery.of(context).size.height / 100) * 1.5),
                             child: Text(
-                              'Prev',
+                              widget.prevText,
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: widget.prevTextColor,
                                   decoration: TextDecoration.none,
                                   fontSize: 20.0
                               ),

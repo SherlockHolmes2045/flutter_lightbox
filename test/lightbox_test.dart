@@ -3,11 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lightbox/lightbox.dart';
 
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
-    expect(() => calculator.addOne(null), throwsNoSuchMethodError);
+  testWidgets("Widget takes images",(WidgetTester tester) async {
+    // Test code goes here.
+    await tester.pumpWidget(LightBox(["https://picsum.photos/200"]));
   });
 }
