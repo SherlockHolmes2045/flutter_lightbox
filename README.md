@@ -5,12 +5,7 @@ Ligthbox enables you to show images in an overlay widget with controls to slide 
 
 The source code is **100% Dart**, and everything resides in the [/lib](https://github.com/SherlockHolmes2045/flutter_lightbox/tree/main/lib) folder.
 
-### Show some :heart: and star the repo to support the project
-
-[![GitHub stars](https://img.shields.io/github/stars/xsahil03x/giffy_dialog.svg?style=social&label=Star)](https://github.com/SherlockHolmes2045/flutter_lightbox) 
-[![GitHub forks](https://img.shields.io/github/forks/xsahil03x/giffy_dialog.svg?style=social&label=Fork)](https://github.com/SherlockHolmes2045/flutter_lightbox/fork) 
-[![GitHub watchers](https://img.shields.io/github/watchers/xsahil03x/giffy_dialog.svg?style=social&label=Watch)](https://github.com/SherlockHolmes2045/flutter_lightbox) 
-[![GitHub followers](https://img.shields.io/github/followers/xsahil03x.svg?style=social&label=Follow)](https://github.com/SherlockHolmes2045/flutter_lightbox)
+### Show some :heart: and star the repo to support the projectd
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/SherlockHolmes2045/flutter_lightbox/blob/master/LICENSE)
