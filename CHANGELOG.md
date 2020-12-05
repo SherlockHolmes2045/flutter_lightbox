@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - 2019-06-15.
 
-* TODO: Describe initial release.
+* Flutter plugin to create lightbox like in web apps.
