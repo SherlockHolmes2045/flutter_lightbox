@@ -17,6 +17,9 @@ import 'package:lightbox/lightbox_route.dart';
 ```
 ## Example usage
 ```dart
+import 'package:lightbox/lightbox.dart';
+import 'package:lightbox/lightbox_route.dart';
+
           // images variable is an array of paths or url of images to load in the lightbox.
                    ListView.separated(
                                        separatorBuilder: (context,index) => SizedBox(width: 10.0),
