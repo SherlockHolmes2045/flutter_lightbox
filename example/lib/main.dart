@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ListView.separated(
                     separatorBuilder: (context,index) => SizedBox(width: 10.0),
                     scrollDirection: Axis.horizontal,
-                    itemCount: imagesAsset.length,
+                    itemCount: images.length,
                     itemBuilder: (context,position){
                       return GestureDetector(
                         child: Container(

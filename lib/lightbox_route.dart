@@ -57,5 +57,5 @@ class LightBoxRoute extends PopupRoute {
   }
 
   @override
-  Duration get transitionDuration => const Duration(milliseconds: 400);
+  Duration get transitionDuration => const Duration(milliseconds: 200);
 }
