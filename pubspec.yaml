@@ -1,5 +1,5 @@
 name: lightbox
-description: Flutter plugin to create lightbox like in web apps.
+description: Flutter plugin to create lightbox like in web apps. Usefull to show images as a diaporama overlay with controls of many types of images(url,assets,file,bytes).
 version: 0.0.1
 homepage: https://github.com/SherlockHolmes2045/flutter_lightbox
 
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cached_network_image: ^2.4.1
+  cached_network_image: ^2.5.1
 
 dev_dependencies:
   flutter_test:

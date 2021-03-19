@@ -3,7 +3,7 @@ library lightbox;
 import 'package:flutter/material.dart';
 
 class LightBoxRoute extends PopupRoute {
-
+  ///LightBoxRoute class creates the overlay with scale transition to show the LightBox
   LightBoxRoute({
     @required this.builder,
     this.dismissible = true,
@@ -12,9 +12,16 @@ class LightBoxRoute extends PopupRoute {
     RouteSettings setting,
   }) : super(settings: setting);
 
+  /// This function defines the widget to be build when navigate to the LightBoxRoute
   final WidgetBuilder builder;
+
+  /// boolean to control if the LightBox can be dismiss or not
   final bool dismissible;
+
+  /// barrier label
   final String label;
+
+  /// barrier colors
   final Color color;
 
   @override
@@ -28,20 +35,20 @@ class LightBoxRoute extends PopupRoute {
 
   @override
   Widget buildPage(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      ) {
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+  ) {
     return builder(context);
   }
 
   @override
   Widget buildTransitions(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      Widget child,
-      ) {
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
     return ScaleTransition(
       scale: Tween<double>(
         begin: 0.0,

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:lightbox/lightbox.dart';
+import 'file:///H:/dev/Programmes/AndroidStudioProjects/lightbox/lib/src/lightbox.dart';
 
 void main() {
   testWidgets("Widget takes images",(WidgetTester tester) async {

@@ -25,7 +25,6 @@ dependencies:
     sdk: flutter
   lightbox:
     path: ../
-  cached_network_image: ^2.4.1
 
 
   # The following adds the Cupertino Icons font to your application.

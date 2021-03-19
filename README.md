@@ -13,52 +13,48 @@ The source code is **100% Dart**, and everything resides in the [/lib](https://g
 Add `lightbox` as a dependency in your pubspec.yaml file.
 ```yaml
 dependencies:
-  lightbox: 0.0.1
+  lightbox: 0.0.2
 ```
-<img src="https://github.com/SherlockHolmes2045/flutter_lightbox/blob/main/demo.gif" title="Lightbox demo" height="520px"/>
+![image](https://github.com/SherlockHolmes2045/flutter_lightbox/blob/main/demo.gif)
 
 Then import lightbox:
 ```dart
 import 'package:lightbox/lightbox.dart';
-import 'package:lightbox/lightbox_route.dart';
 ```
 ## Example usage
 ```dart
 import 'package:lightbox/lightbox.dart';
-import 'package:lightbox/lightbox_route.dart';
-
           // images variable is an array of paths or url of images to load in the lightbox.
                    ListView.separated(
-                                       separatorBuilder: (context,index) => SizedBox(width: 10.0),
+                                       separatorBuilder: (context, index) => SizedBox(width: 10.0),
                                        scrollDirection: Axis.horizontal,
-                                       itemCount: images.length,
-                                       itemBuilder: (context,position){
+                                       itemCount: imagesAsset.length,
+                                       itemBuilder: (context, position) {
                                          return GestureDetector(
                                            child: Container(
                                                height: 200,
                                                width: 200,
-                                               child: Image.network(
-                                               images[position],
-                                             fit: BoxFit.cover,
-                                         ),),
-                                           onTap: (){
+                                               child: Image.asset(
+                                                 imagesAsset[position],
+                                                 fit: BoxFit.cover,
+                                               )),
+                                           onTap: () {
                                              Navigator.push(
-                                             context,
-                                             LightBoxRoute(
-                                                 builder: (BuildContext context){
-                                                   return LightBox(
-                                                     images,
-                                                     initialIndex: position,
-                                                     isUrl: true, // if the array of images are url
-                                                   );
-                                                 },
-                                                 dismissible: false
-                                             ));
+                                                 context,
+                                                 LightBoxRoute(
+                                                     builder: (BuildContext context) {
+                                                       return LightBox(
+                                                         imagesAsset,
+                                                         initialIndex: position,
+                                                         imageType: ImageType.ASSET,
+                                                       );
+                                                     },
+                                                     dismissible: false));
                                            },
                                          );
                                        }),
 ```
-You can find a more detailed example [here]("https://github.com/SherlockHolmes2045/flutter_lightbox/tree/main/example")
+You can find a more detailed example [here](https://github.com/SherlockHolmes2045/flutter_lightbox/tree/main/example)
 
 # 📃 License
 
