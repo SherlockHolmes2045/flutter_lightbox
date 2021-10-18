@@ -44,7 +44,7 @@ import 'package:lightbox/lightbox.dart';
                                                  LightBoxRoute(
                                                      builder: (BuildContext context) {
                                                        return LightBox(
-                                                         imagesAsset,
+                                                       images:imagesAsset,
                                                          initialIndex: position,
                                                          imageType: ImageType.ASSET,
                                                        );
