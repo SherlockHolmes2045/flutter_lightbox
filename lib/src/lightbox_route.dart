@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 class LightBoxRoute extends PopupRoute {
   ///LightBoxRoute class creates the overlay with scale transition to show the LightBox
   LightBoxRoute({
-    @required this.builder,
+    required this.builder,
     this.dismissible = true,
     this.label,
     this.color,
-    RouteSettings setting,
+    RouteSettings? setting,
   }) : super(settings: setting);
 
   /// This function defines the widget to be build when navigate to the LightBoxRoute
@@ -19,19 +19,19 @@ class LightBoxRoute extends PopupRoute {
   final bool dismissible;
 
   /// barrier label
-  final String label;
+  final String? label;
 
   /// barrier colors
-  final Color color;
+  final Color? color;
 
   @override
-  Color get barrierColor => color;
+  Color? get barrierColor => color;
 
   @override
   bool get barrierDismissible => dismissible;
 
   @override
-  String get barrierLabel => label;
+  String? get barrierLabel => label;
 
   @override
   Widget buildPage(

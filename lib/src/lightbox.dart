@@ -63,8 +63,9 @@ class LightBox extends StatefulWidget {
 
   /// This is the lightBox widget which is used to display the image as diaporama
   /// with controls
-  LightBox(this.images,
-      {this.initialIndex = 0,
+  LightBox(
+      {required this.images,
+      this.initialIndex = 0,
       this.imageType = ImageType.URL,
       this.blur = 2.5,
       this.closeIcon = Icons.close,
@@ -84,7 +85,7 @@ class LightBox extends StatefulWidget {
 }
 
 class _LightBoxState extends State<LightBox> {
-  PageController controller;
+  late PageController controller;
 
   @override
   void initState() {
@@ -95,10 +96,8 @@ class _LightBoxState extends State<LightBox> {
   }
 
   void changePageViewPosition(int whichPage) {
-    if (controller != null) {
-      if (whichPage < widget.images.length && whichPage >= 0) {
-        controller.jumpToPage(whichPage);
-      }
+    if (whichPage < widget.images.length && whichPage >= 0) {
+      controller.jumpToPage(whichPage);
     }
   }
 
@@ -222,7 +221,7 @@ class _LightBoxState extends State<LightBox> {
                         ],
                       ),
                       onTap: () {
-                        changePageViewPosition((controller.page - 1).round());
+                        changePageViewPosition((controller.page! - 1).round());
                       },
                     ),
                     GestureDetector(
@@ -255,7 +254,7 @@ class _LightBoxState extends State<LightBox> {
                         ],
                       ),
                       onTap: () {
-                        changePageViewPosition((controller.page + 1).round());
+                        changePageViewPosition((controller.page! + 1).round());
                       },
                     )
                   ],

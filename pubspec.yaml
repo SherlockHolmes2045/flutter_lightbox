@@ -4,13 +4,12 @@ version: 0.0.2
 homepage: https://github.com/SherlockHolmes2045/flutter_lightbox
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0 <2.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  cached_network_image: ^2.5.1
+  cached_network_image: ^3.1.0
 
 dev_dependencies:
   flutter_test:

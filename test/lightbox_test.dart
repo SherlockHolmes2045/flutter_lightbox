@@ -5,6 +5,6 @@ import 'file:///H:/dev/Programmes/AndroidStudioProjects/lightbox/lib/src/lightbo
 void main() {
   testWidgets("Widget takes images",(WidgetTester tester) async {
     // Test code goes here.
-    await tester.pumpWidget(LightBox(["https://picsum.photos/200"]));
+    await tester.pumpWidget(LightBox(images: ["https://picsum.photos/200"],));
   });
 }

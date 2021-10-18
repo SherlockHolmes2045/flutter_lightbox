@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title!),
       ),
       body: Center(
         child: Padding(
@@ -88,9 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               LightBoxRoute(
                                   builder: (BuildContext context) {
                                     return LightBox(
-                                      imagesAsset,
                                       initialIndex: position,
-                                      imageType: ImageType.ASSET,
+                                      imageType: ImageType.ASSET, images: imagesAsset,
                                     );
                                   },
                                   dismissible: false));
@@ -125,8 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               LightBoxRoute(
                                   builder: (BuildContext context) {
                                     return LightBox(
-                                      images,
-                                      initialIndex: position,
+                                      initialIndex: position, images: images,
                                     );
                                   },
                                   dismissible: false));
@@ -161,9 +159,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               LightBoxRoute(
                                   builder: (BuildContext context) {
                                     return LightBox(
-                                      imagesBytes,
                                       initialIndex: position,
-                                      imageType: ImageType.BYTES,
+                                      imageType: ImageType.BYTES, images: imagesBytes,
                                     );
                                   },
                                   dismissible: false));
