@@ -13,7 +13,7 @@ The source code is **100% Dart**, and everything resides in the [/lib](https://g
 Add `lightbox` as a dependency in your pubspec.yaml file.
 ```yaml
 dependencies:
-  lightbox: 0.0.2
+  lightbox: 0.1.0
 ```
 ![image](https://github.com/SherlockHolmes2045/flutter_lightbox/blob/main/demo.gif)
 
