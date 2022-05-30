@@ -239,14 +239,11 @@ class _LightBoxState extends State<LightBox> {
                               children: [
                                 Text(
                                   'Next',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      decoration: TextDecoration.none,
-                                      fontSize: 20.0),
+                                  style: TextStyle(color: widget.nextIconColor, decoration: TextDecoration.none, fontSize: 16.0),
                                 ),
                                 Icon(
                                   Icons.arrow_forward_ios_sharp,
-                                  color: Colors.black,
+                                  color: widget.nextTextColor,
                                 )
                               ],
                             ),
